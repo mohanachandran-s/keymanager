@@ -1,0 +1,18 @@
+# Validator profile for keymanager api-test (from crewline discover @ 772f1659, reviewed 2026-11-10)
+module_code: KEYMANAGER
+resources_root: src/main/resources
+suite_files:
+- testNgXmlFiles/keymanagerSuite.xml
+exclude_dirs:
+- config
+- dbFiles
+ignore_yaml: []
+testcase_rules:
+  case_name_prefix: KeyManager_
+  unique_identifier_pattern: ^TC_(?i:KeyManager)_[A-Za-z0-9]+_\d+$
+  extra_id_fields_by_class: {}
+  extra_id_fields_gate: {}
+  capture_without_sid: []
+  id_key_from_input: {}
+  severity:
+    NAME-003: WARN

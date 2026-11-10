@@ -1,0 +1,17 @@
+module: keymanager
+remotes:
+- https://github.com/mosip/keymanager.git
+verified_at:
+  commit: 772f16595b69dca40b1653cb53e45d93b442d869
+  date: '2026-11-10T08:20:48Z'
+stack:
+  maven_parent: kernel/pom.xml
+  node_projects: []
+  ui_test_projects: []
+  api_test: true
+roles:
+  development: development/local-context.md
+  qa:
+  - qa/module-context.md
+  - qa/known-issues.md
+  - qa/profile.yaml

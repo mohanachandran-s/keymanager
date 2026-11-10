@@ -1,0 +1,223 @@
+{
+  "repo_name": "keymanager",
+  "head": "772f16595b69dca40b1653cb53e45d93b442d869",
+  "branch": "develop",
+  "remotes": [
+    "https://github.com/mosip/keymanager.git"
+  ],
+  "discovered_at": "2026-11-10T08:20:48Z",
+  "maven": {
+    "poms": [
+      {
+        "path": "kernel/pom.xml",
+        "kind": "service",
+        "artifact": "keymanager-parent",
+        "modules": [
+          "kernel-keymanager-service",
+          "keys-generator",
+          "keys-migrator"
+        ],
+        "java_version": "21",
+        "java_version_ref": "kernel/pom.xml",
+        "jacoco": true,
+        "jacoco_ref": "kernel/pom.xml:98",
+        "surefire_argline": [
+          "${argLine}"
+        ],
+        "surefire_argline_keeps_agent": true,
+        "test_libs": []
+      },
+      {
+        "path": "kernel/kernel-keymanager-service/pom.xml",
+        "kind": "service",
+        "artifact": "kernel-keymanager-service",
+        "modules": [],
+        "java_version": "21",
+        "java_version_ref": "kernel/kernel-keymanager-service/pom.xml",
+        "jacoco": true,
+        "jacoco_ref": "kernel/kernel-keymanager-service/pom.xml:448",
+        "surefire_argline": [
+          "${argLine}"
+        ],
+        "surefire_argline_keeps_agent": true,
+        "test_libs": [
+          "junit",
+          "junit-vintage-engine",
+          "mockito-core",
+          "mockito-inline"
+        ]
+      },
+      {
+        "path": "kernel/keys-generator/pom.xml",
+        "kind": "service",
+        "artifact": "keys-generator",
+        "modules": [],
+        "java_version": "21",
+        "java_version_ref": "kernel/keys-generator/pom.xml",
+        "jacoco": true,
+        "jacoco_ref": "kernel/keys-generator/pom.xml:252",
+        "surefire_argline": [
+          "${argLine}"
+        ],
+        "surefire_argline_keeps_agent": true,
+        "test_libs": []
+      },
+      {
+        "path": "kernel/keys-migrator/pom.xml",
+        "kind": "service",
+        "artifact": "keys-migrator",
+        "modules": [],
+        "java_version": "21",
+        "java_version_ref": "kernel/keys-migrator/pom.xml",
+        "jacoco": false,
+        "jacoco_ref": "",
+        "surefire_argline": [],
+        "surefire_argline_keeps_agent": true,
+        "test_libs": []
+      }
+    ],
+    "parent": "kernel/pom.xml"
+  },
+  "services": {
+    "kernel/kernel-keymanager-service": {
+      "test_files": 56,
+      "main_files": 256,
+      "mockmvc": 18,
+      "webmvctest": 2,
+      "springboottest": 32,
+      "component_test_example": "kernel/kernel-keymanager-service/src/test/java/io/mosip/kernel/signature/test/controller/SignatureControllerTest.java"
+    },
+    "kernel/keys-generator": {
+      "test_files": 0,
+      "main_files": 3,
+      "component_test_example": ""
+    },
+    "kernel/keys-migrator": {
+      "test_files": 0,
+      "main_files": 2,
+      "component_test_example": ""
+    }
+  },
+  "ui_test_projects": [],
+  "node": [],
+  "ci": {
+    "workflows": [
+      "chart-lint-publish.yml",
+      "clear-artifacts.yml",
+      "db-test.yml",
+      "push-trigger.yml",
+      "use-pr-linker.yml"
+    ],
+    "uses": [
+      "8398a7/action-slack",
+      "actions/checkout",
+      "actions/setup-java",
+      "actions/upload-artifact",
+      "mosip/kattu/.github/workflows/chart-lint-publish.yml",
+      "mosip/kattu/.github/workflows/clear-artifacts.yml",
+      "mosip/kattu/.github/workflows/db-test.yml",
+      "mosip/kattu/.github/workflows/docker-build.yml",
+      "mosip/kattu/.github/workflows/link-pr-to-issue.yml",
+      "mosip/kattu/.github/workflows/maven-build.yml",
+      "mosip/kattu/.github/workflows/maven-publish-to-nexus.yml",
+      "mosip/kattu/.github/workflows/maven-sonar-analysis.yml"
+    ]
+  },
+  "db": {
+    "dirs": [
+      "db_upgrade_scripts",
+      "db_scripts"
+    ],
+    "forward": 9,
+    "unpaired": []
+  },
+  "deploy": {
+    "helm": [
+      "helm/key-migration-utility",
+      "helm/keygen",
+      "helm/keymanager",
+      "helm/softhsm"
+    ],
+    "dockerfiles": [
+      "api-test/Dockerfile",
+      "kernel/kernel-keymanager-service/Dockerfile",
+      "kernel/keys-generator/Dockerfile",
+      "kernel/keys-migrator/Dockerfile"
+    ]
+  },
+  "guidance": [
+    "AGENTS.md"
+  ],
+  "api_test": {
+    "root": "api-test",
+    "suite_files": [
+      "testNgXmlFiles/keymanagerSuite.xml"
+    ],
+    "yaml_files": 4,
+    "cases": 37,
+    "with_unique_identifier": 37,
+    "parse_errors": {},
+    "unwired_yaml": [],
+    "script_classes": {
+      "SimplePostWithCertValidation": 3,
+      "SimplePostWithCsrValidation": 1
+    },
+    "id_key_names": [],
+    "case_name_prefix": [
+      "KeyManager_",
+      37
+    ],
+    "case_name_families": {
+      "KeyManager_": 37
+    },
+    "case_name_deviations": {},
+    "uid_module_token": [
+      [
+        "KeyManager",
+        37
+      ]
+    ],
+    "uid_pattern": "^TC_(?i:KeyManager)_[A-Za-z0-9]+_\\d+$",
+    "uid_pattern_matches": 37,
+    "duplicate_uids": [],
+    "coverage_matrix": false,
+    "profile": {
+      "module_code": "KEYMANAGER",
+      "resources_root": "src/main/resources",
+      "suite_files": [
+        "testNgXmlFiles/keymanagerSuite.xml"
+      ],
+      "exclude_dirs": [
+        "config",
+        "dbFiles"
+      ],
+      "ignore_yaml": [],
+      "testcase_rules": {
+        "case_name_prefix": "KeyManager_",
+        "unique_identifier_pattern": "^TC_(?i:KeyManager)_[A-Za-z0-9]+_\\d+$",
+        "extra_id_fields_by_class": {},
+        "extra_id_fields_gate": {},
+        "capture_without_sid": [],
+        "id_key_from_input": {},
+        "severity": {
+          "NAME-003": "WARN"
+        }
+      }
+    },
+    "id_capture": {
+      "extra_id_fields_by_class": {},
+      "extra_id_fields_gate": {},
+      "capture_without_sid": [],
+      "id_key_from_input": {}
+    }
+  },
+  "standards": {
+    "tools": [],
+    "config_files": []
+  },
+  "baseline": {
+    "status": "PASS",
+    "summary": "0 blocking, 0 warning(s), 0 info, 0 approved",
+    "by_rule": {}
+  }
+}
